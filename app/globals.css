@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#input-group-dropdown-1{
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
