@@ -7,7 +7,7 @@ const Verified = () => {
         <p className="font-bold mt[-300px]">Success</p>
       </header>
       <main className="h-80 w-full flex justify-around flex-col items-center p-4">  
-        <h4 className="text-red-800 text-5xl text-green-700"><GiConfirmed /></h4>
+        <h4 className="text-5xl text-green-700"><GiConfirmed /></h4>
         <h4 className="text-green-800 font-bold text-center">Phone Number has been successfully confirmed!</h4>
         <button className="flex font-bold justify-center align-center bg-green-700 py-1 px-1">
             Continue
