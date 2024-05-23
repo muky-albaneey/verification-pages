@@ -10,7 +10,7 @@ const Verification = () => {
   return (
     <div className="w-full text-green-600 my-0 mx-auto lg:w-3/6 text-white flex justify-start flex-col">
     <header className="bg-green-700 font-bold w-full h-14 flex flex-col justify-center items-start  p-4">
-      <p className="font-bold mt[-300px]">Verify Phone Number</p>
+      <p className="w-full font-bold mt[-300px]">Verify Phone Number</p>
     </header>
     <main className="h-80 w-full flex justify-around flex-col items-start p-4">  
       <h4 className="text-green-800">Enter your phone number below to begin verification process.</h4>

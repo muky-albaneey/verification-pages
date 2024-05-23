@@ -3,8 +3,9 @@ import { FiCopy } from "react-icons/fi";
 const Sms = () => {
   return (
     <div className="w-full text-green-600 my-0 mx-auto lg:w-3/6 text-white flex justify-start flex-col">
-    <header className="bg-green-700 font-bold w-full h-14 flex flex-col justify-center items-start  p-4">
-      <p className="font-bold mt[-300px]">SMS Confirmation</p>
+    <header className="w-full bg-green-700 font-bold w-full h-14 flex flex-col justify-center items-start  p-4">
+      <p className=" w-full font-bold mt[-300px]">SMS Confirmation</p>
+      
     </header>
     <main className="h-80 w-full flex justify-around flex-col items-start p-4">  
       <h4 className="text-red-800">
