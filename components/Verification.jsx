@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
@@ -10,18 +11,30 @@ const data = [
   
   {
     id :1,
-    country : 'south africa',
-    image : '/south_africa.png',
+    country : 'Nigeria',
+    image : '/nigeria.png',
     
   },
   {
     id :2,
-    country : 'niger',
+    country : 'Niger',
     image : '/niger.jpg',
+    
+  },
+  {
+    id :3,
+    country : 'South africa',
+    image : '/south_africa.png',
     
   }
 ]
 const Verification = () => {
+  const [selectedImage, setSelectedImage] = useState('/nigeria.png');
+
+  const handleSelect = (eventKey) => {
+    setSelectedImage(eventKey); // Update the image based on the selected item
+  };
+
   return (
     <div className="w-full text-green-600 my-0 mx-auto lg:w-3/6 text-white flex justify-start flex-col">
     <header className="bg-green-700 font-bold w-full h-14 flex flex-col justify-center items-start  p-4">
@@ -32,35 +45,35 @@ const Verification = () => {
       <div className="flex justify-center flex-col">
         <h4 className="text-green-800 font-bold">Enter Phone Number</h4>
         <InputGroup className="mb-3 flex">
-        
+                   
           <DropdownButton
-            className="w-8 flex"
-            variant="outline-secondary"
-            title={
-              <Image            
-                src="/nigeria.png" // Path to your image
-                alt="Dropdown"
-                width={25} // Set appropriate width
-                height={20} // Set appropriate height
-              />
-            }
-            
-            id="input-group-dropdown-1"
-          >
-          {data.map((item) => (
-            <Dropdown.Item key={item.id} href="#">
-              <div className="flex items-center">
-                <Image
-                  src={item.image}
-                  alt={item.country}
-                  width={25}
-                  height={20}
-                />
-                <span className="ml-2">{item.country}</span>
-              </div>
-            </Dropdown.Item>
-          ))}
-          </DropdownButton>
+          className="w-8 flex"
+          variant="outline-secondary"
+          title={
+            <Image
+              src={selectedImage} // Path to your image
+              alt="Dropdown"
+              width={25} // Set appropriate width
+              height={20} // Set appropriate height
+            />
+          }
+          id="input-group-dropdown-1"
+          onSelect={handleSelect}
+        >
+        {
+          data.map((items)=>(
+            <Dropdown.Item eventKey={items.image}>
+             <Image
+            src={items.image} // Path to your image
+            alt="Dropdown"
+            width={25} // Set appropriate width
+            height={20} // Set appropriate height
+          />{items.country}</Dropdown.Item>
+          ))
+        }
+          
+          {/* Add more dropdown items as needed */}
+        </DropdownButton>
           <Form.Control aria-label="Text input with dropdown button"placeholder="0909009000" />
         </InputGroup>  
       </div>
