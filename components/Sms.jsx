@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FiCopy } from "react-icons/fi"; 
 
 const Sms = () => {
@@ -15,7 +16,8 @@ const Sms = () => {
         <h4 className="text-green-800 font-bold flex gap-2.5 items-center cursor-pointer">“08038403808”  <span><FiCopy /></span></h4>
       </div>
       <button className="flex font-bold justify-center align-center bg-green-700 py-1 px-1">
-        I have sent the SMS
+        
+        <Link href={'/verified'}>I have sent the SMS</Link>
       </button>
     </main>
   </div>

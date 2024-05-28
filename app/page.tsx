@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <Verification />
       <Sms /> 
-      <Verified />        
+           
     </div>
   );
 }

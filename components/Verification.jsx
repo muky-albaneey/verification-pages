@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
@@ -64,7 +65,7 @@ const Verification = () => {
         </InputGroup>  
       </div>
       <button className="flex font-bold justify-center align-center bg-green-700 py-1 px-1">
-          Verify Phone Number
+          <Link href={'/verified'}>Verify Phone Number</Link>
       </button>
     </main>
   </div>
