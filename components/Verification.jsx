@@ -5,7 +5,21 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-
+const data = [
+  
+  {
+    id :1,
+    country : 'south africa',
+    image : '/south_africa.png',
+    
+  },
+  {
+    id :2,
+    country : 'niger',
+    image : '/niger.jpg',
+    
+  }
+]
 const Verification = () => {
   return (
     <div className="w-full text-green-600 my-0 mx-auto lg:w-3/6 text-white flex justify-start flex-col">
@@ -17,6 +31,7 @@ const Verification = () => {
       <div className="flex justify-center flex-col">
         <h4 className="text-green-800 font-bold">Enter Phone Number</h4>
         <InputGroup className="mb-3 flex">
+        
           <DropdownButton
             className="w-8 flex"
             variant="outline-secondary"
@@ -31,11 +46,19 @@ const Verification = () => {
             
             id="input-group-dropdown-1"
           >
-            <Dropdown.Item href="#">Action</Dropdown.Item>
-            <Dropdown.Item href="#">Another action</Dropdown.Item>
-            <Dropdown.Item href="#">Something else here</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item href="#">Separated link</Dropdown.Item>
+          {data.map((item) => (
+            <Dropdown.Item key={item.id} href="#">
+              <div className="flex items-center">
+                <Image
+                  src={item.image}
+                  alt={item.country}
+                  width={25}
+                  height={20}
+                />
+                <span className="ml-2">{item.country}</span>
+              </div>
+            </Dropdown.Item>
+          ))}
           </DropdownButton>
           <Form.Control aria-label="Text input with dropdown button"placeholder="0909009000" />
         </InputGroup>  
