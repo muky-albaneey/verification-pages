@@ -13,34 +13,44 @@ const data = [
     id :1,
     country : 'Nigeria',
     image : '/nigeria.png',
+    call_code : "0909009000"
     
   },
   {
     id :2,
     country : 'Niger',
     image : '/niger.jpg',
+    call_code : "+213 661 23 45 67"
     
   },
   {
     id :3,
     country : 'South africa',
     image : '/south_africa.png',
+    call_code : "+27 82 123 4567"
     
   },
   {
     id :4,
     country : 'Algeria',
     image : '/algeria.png',
+    call_code : "+227 90 56 78 90"
     
   }
 ]
 
 const Verification = () => {
-  const [selectedImage, setSelectedImage] = useState('/nigeria.png');
+  const [selectedImage, setSelectedImage] = useState(data[0].image);
+  const [selectedNum, setSelectedNum] = useState(data[0].call_code);
 
   const handleSelect = (eventKey) => {
-    setSelectedImage(eventKey); // Update the image based on the selected item
+    const selectedCountry = data.find(item => item.image === eventKey);
+    if (selectedCountry) {
+      setSelectedImage(selectedCountry.image);
+      setSelectedNum(selectedCountry.call_code);
+    }
   };
+
 
   return (
     <div className="w-full text-green-600 my-0 mx-auto lg:w-3/6 text-white flex justify-start flex-col">
@@ -81,7 +91,7 @@ const Verification = () => {
           
           {/* Add more dropdown items as needed */}
         </DropdownButton>
-          <Form.Control aria-label="Text input with dropdown button"placeholder="0909009000" />
+          <Form.Control aria-label="Text input with dropdown button"placeholder={selectedNum} />
         </InputGroup>  
       </div>
       <button className="flex font-bold justify-center align-center bg-green-700 py-1 px-1">
