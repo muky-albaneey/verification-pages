@@ -34,6 +34,7 @@ const data = [
     
   }
 ]
+
 const Verification = () => {
   const [selectedImage, setSelectedImage] = useState('/nigeria.png');
 
