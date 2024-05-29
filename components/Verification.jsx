@@ -26,6 +26,12 @@ const data = [
     country : 'South africa',
     image : '/south_africa.png',
     
+  },
+  {
+    id :4,
+    country : 'Algeria',
+    image : '/algeria.png',
+    
   }
 ]
 const Verification = () => {
